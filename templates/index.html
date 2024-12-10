@@ -1,0 +1,38 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>My First Webpage</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Spam Classifier</h1>
+    <div>
+        <form method="post" action = "/predict">
+            <textarea name="email-content" placeholder="Enter your email here" rows="20" cols="75"  
+           >{{ email_text}}</textarea>
+            <div>
+                <button type="Check Spam">Check Spam</button>
+                <a href="/">Reset</a>
+            </div>
+        </form>
+    </div>
+    <div>
+        {% if predictions %}
+        {% if predictions == 1 %}
+        <h2 style="color: red">Spam</h2>
+        {% else %}
+        <h2 style="color: green">Not Spam</h2>
+        {% endif %}
+        {% endif %}
+        <!-- <p id="display"></p> -->
+    </div>
+</body>
+</html>
